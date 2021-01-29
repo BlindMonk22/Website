@@ -16,25 +16,41 @@ $classe = $_GET["CLASSE"];
 //parametri necessari per la connessione a MYSQL
 $host = 'localhost'; //ipotizzando di accedere ad un server locale.
 $database = 'form';
-$utente='root'; 
-$password='root'; //metti la passwd qua di cosa? dell'sql?
+$utente='Antonio'; 
+$password='Antonio'; //metti la passwd qua di cosa? dell'sql?
 
 $connessione = mysqli_connect($host,$utente,$password,$database);
         if(!$connessione){
             die("Errore di connessione ".mysqli_error());
         }
 
- 
-//comando SQL
-$sql = "insert into studenti(cognome,nome,comune,classe) values
-('$cognome','$nome','$comune','$classe')";
- //inserire il testo del comando desiderato
+$punteggio = 0;
+$totale=0;
+$sql = "Select * from domande";
+$query = mysqli_query($connessione,$sql);
+while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
+    $risposta = $_GET[$row["IDDOMANDA"]];
+    if($risposta==($row["CORRETTA"])){
+        $punteggio+=$row["PUNTEGGIO"];
+    }
+    $risposte = explode(";",$row["OPZIONI"]);
+    echo "<div>";
+    echo "Domanda n",$row["IDDOMANDA"],"";
+    echo "<br>";
+    echo "Risposta corretta: ",$risposte[($row["CORRETTA"])-1]," | ";
+    echo "La tua risposta: ",$risposte[($risposta)-1],"\n";
+    echo "</div>";
+    $totale+=$row["PUNTEGGIO"];
+}
+echo "Il tuo punteggio finale è ",$punteggio,"/",$totale,"";
 
-echo ("<BR>".$sql);// utile in fase di debug
+//comando SQL
+$sql = "insert into studenti(cognome,nome,comune,classe,punteggio) values
+('$cognome','$nome','$comune','$classe','$punteggio')";
   
 $query = mysqli_query($connessione,$sql);
 
- mysqli_close($connessione);
+mysqli_close($connessione);
 ?>
 
 </body>
