@@ -16,8 +16,8 @@ $classe = $_GET["CLASSE"];
 //parametri necessari per la connessione a MYSQL
 $host = 'localhost'; //ipotizzando di accedere ad un server locale.
 $database = 'form';
-$utente='Antonio'; 
-$password='Antonio'; //metti la passwd qua di cosa? dell'sql?
+$utente='root'; 
+$password='root'; 
 
 $connessione = mysqli_connect($host,$utente,$password,$database);
         if(!$connessione){

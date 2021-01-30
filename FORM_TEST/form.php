@@ -1,6 +1,7 @@
 <html>
 <head>
 <title> pagina1</title>
+<meta charset="utf-8">
 </head>	
 <body>
 <h1> FORM DI INVIO DATI</h1>
@@ -9,14 +10,14 @@
    <fieldset>
     <legend align="center">DATI DELLO STUDENTE</legend>
     <table border="0">
-	  <tr><td>COGNOME:<td><input name="COGNOME" type="text" size="20"><tr>
-      <tr><td>NOME:<td><input name="NOME" type="text" size="20"><tr>
+	  <tr><td>COGNOME:<td><input name="COGNOME" type="text" size="20" required><tr>
+      <tr><td>NOME:<td><input name="NOME" type="text" size="20" required><tr>
     </table>
 	 </fieldset>
 	 <br>
-    COMUNE DI NASCITA:<input name="COMUNE" type="text"><br><br>
+    COMUNE DI NASCITA:<input name="COMUNE" type="text" required><br><br>
 	 CLASSE ATTUALE:<br>
-	<select name="CLASSE">
+	<select name="CLASSE" required>
     <option>1C</option>
     <option>2C</option>
     <option>3C</option>
@@ -33,8 +34,8 @@
   //parametri necessari per la connessione a MYSQL
   $host = 'localhost'; //ipotizzando di accedere ad un server locale.
   $database = 'form';
-  $utente='Antonio'; 
-  $password='Antonio'; //metti la passwd qua di cosa? dell'sql?
+  $utente='root'; 
+  $password='root';
 
   $connessione = mysqli_connect($host,$utente,$password,$database);
         if(!$connessione){
@@ -56,6 +57,7 @@
 
   mysqli_close($connessione);
   ?>
+  <br>
 	 <INPUT TYPE="submit" NAME="B1"VALUE="Invia" />
 <INPUT TYPE="reset" NAME="B2" VALUE="Annulla" />
 </form>

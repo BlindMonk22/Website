@@ -1,0 +1,1 @@
+﻿insert into domande(testo,opzioni,corretta,punteggio) values("Cosa sono i vaccini?","Una preparazione biologica in grado di fornire l'immunità;Delle proteine;Delle preparazioni biologiche che non fanno bene al nostro organismo","1","1") 
