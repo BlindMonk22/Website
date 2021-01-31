@@ -1,0 +1,42 @@
+.titolo{
+    color: red;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+}
+.text{
+    color: beige;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.evidenziato{
+    color: #d3fc03;
+    font-weight: bold;
+    font-style: italic;
+}
+li::marker{
+    color: beige;
+}
+body{
+    background-color: black;
+}
+hr{
+    size: 2.4px;
+    color: #0cebd4;
+}
+table{
+    border: 10px solid white;
+
+}
+th,td{
+    border: 2px solid white;
+}
+.tabella{
+    max-width: 70%;
+    float: right;
+    color: beige;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+th{
+    color: #d3fc03;
+}
