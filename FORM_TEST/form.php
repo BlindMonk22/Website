@@ -1,10 +1,15 @@
 <html>
 <head>
 <title> pagina1</title>
+    <link
+      rel="shortcut icon"
+      type="image.png"
+      href="letter_m_PNG48.png"
+    />
 <meta charset="utf-8">
 </head>	
-<body>
-<h1> FORM DI INVIO DATI</h1>
+<body bgcolor="#cc9d31">
+<h1 align="center"> FORM DI INVIO DATI</h1>
 <br/>
 <form action="inserisci_studente.php" method="GET">
    <fieldset>
@@ -16,17 +21,7 @@
 	 </fieldset>
 	 <br>
     COMUNE DI NASCITA:<input name="COMUNE" type="text" required><br><br>
-	 CLASSE ATTUALE:<br>
-	<select name="CLASSE" required>
-    <option>1C</option>
-    <option>2C</option>
-    <option>3C</option>
-	<option>4C</option>
-    <option>5C</option>
   </select>
-  <br>
-  <br>
-  <br>
   <br>
   <h1>INIZIO DOMANDE</h1>
   <?php
